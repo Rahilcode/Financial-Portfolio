@@ -1,0 +1,30 @@
+version: "3.8"
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: portfolio_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  backend:
+    build: .
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/portfolio_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+      JWT_SECRET: some_demo_538sjfsfj893jfJLj9483_JWT_secret_token_sdf359o5jLJJ%(%3442
+      ALPHA_VANTAGE_API_KEY: "U3JL5IXPQM0YZ5YG"
+      SERVER_PORT: 8080
+    depends_on:
+      - db
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+
+volumes:
+  pgdata:
