@@ -27,6 +27,7 @@ This project is a full-stack application consisting of:
 - **Security**: Spring Security with JWT for authentication and secure API endpoints.
 - **Data Visualization**: Chart.js is used for line and pie charts for historical prices and portfolio allocations.
 - **AI/ML Simulation**: A mock API simulates portfolio insights, including diversification score and hypothetical asset recommendations.
+- **External API**: Alpha Vantage API for current asset price (real time data) and Yahoo Financial api for fetching history data of the asset.
 
 ---
 
@@ -99,7 +100,8 @@ This project is a full-stack application consisting of:
 ### Backend Setup
 
 Clone repository
-git clone <repository-url>
+git clone [<repository-url>](https://github.com/Rahilcode/Financial-Portfolio/edit/main)
+
 cd backend
 
 # Configure PostgreSQL in application.properties
@@ -109,8 +111,13 @@ spring.datasource.username=postgres
 spring.datasource.password=yourpassword
 
 Build and run backend
+
+Option 1:
 ./mvnw clean install
 ./mvnw spring-boot:run
+
+Option 2:
+docker compose up --build
 
 ### Frontend Setup
 
