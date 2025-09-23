@@ -19,8 +19,8 @@ server:
   port: ${PORT:8080}
 
 alpha:
-#  api-key: U3JL5IXPQM0YZ5YG
-  api-key: ${ALPHA_API_KEY}
+  api-key: U3JL5IXPQM0YZ5YG
+#  api-key: ${ALPHA_API_KEY}
 
 jwt:
 #  secret: some_demo_538sjfsfj893jfJLj9483_JWT_secret_token_sdf359o5jLJJ%(%3442

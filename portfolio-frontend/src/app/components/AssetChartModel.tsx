@@ -36,9 +36,9 @@ export default function AssetChartModal({
   historicalMap: Record<string, number>;
   allocation: { ticker: string; weight: number }[];
 }) {
-  if (!open) return null;
-
   const [range, setRange] = useState<"30D" | "1Y" | "3Y">("30D");
+
+  if (!open) return null;
 
   // Determine start date for filter
   const now = new Date();
